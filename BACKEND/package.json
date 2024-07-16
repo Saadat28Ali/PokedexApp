@@ -1,0 +1,20 @@
+{
+  "name": "pokedex",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A server app that fetches information about pokemon",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Saadat Ali",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
