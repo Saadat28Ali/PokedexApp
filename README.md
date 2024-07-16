@@ -1,3 +1,6 @@
+
+![pokedexss](https://github.com/user-attachments/assets/8e78298a-2965-474a-b06e-9039930cc7d4)
+
 # Pokedex
 A React app that allows you to look up information about various Pokemon
 
@@ -11,8 +14,8 @@ Get a RapidAPI key for Pokemon Hub, here: https://rapidapi.com/yasindusamarasing
 Edit ./BACKEND/server.js and add your own API key there
 
 ## Running
-> npm start
 For both the backend and frontend scripts, both must be running simultaneously
+> npm start
 
 # Technologies Used
 1. React
