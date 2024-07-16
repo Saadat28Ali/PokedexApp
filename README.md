@@ -27,3 +27,6 @@ For both the backend and frontend scripts, both must be running simultaneously
 7. JavaScript
 8. HTML
 9. CSS
+
+# NOTE
+Since an external API is used, the time for the app to update with new information might vary
