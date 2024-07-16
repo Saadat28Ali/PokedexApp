@@ -1,6 +1,14 @@
 
 ![pokedexss](https://github.com/user-attachments/assets/8e78298a-2965-474a-b06e-9039930cc7d4)
 
+
+![Static Badge](https://img.shields.io/badge/Node-JS-green?style=flat&label=Node&labelColor=grey&color=green&link=https%3A%2F%2Fgithub.com%2Fnodejs)
+![Static Badge](https://img.shields.io/badge/React-JS-cyan)
+![Static Badge](https://img.shields.io/badge/express-JS-orange)
+![Static Badge](https://img.shields.io/badge/axios-purple)
+![Static Badge](https://img.shields.io/badge/tailwind-css-blue)
+
+
 # Pokedex
 A React app that allows you to look up information about various Pokemon
 
