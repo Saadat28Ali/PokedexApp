@@ -8,7 +8,7 @@ const APP = express();
 const PORT = 5000;
 
 // ADD YOUR OWN KEY HERE
-const PERSONALKEY = "";
+const PERSONALKEY = "cb84764be2mshd187c5270aed11ep17bd61jsn26f586772520";
 
 function getPokemonData(name) {
 
@@ -27,7 +27,7 @@ function getPokemonData(name) {
             }
         ).then(
             (response) => {
-                // console.log(response.data);
+                console.log(response.data);
                 // storehere = { ...response.data };
                 resolve({ ...response.data })
             }
@@ -52,7 +52,7 @@ APP.get("/api/", (request, response) => {
 
 APP.post("/api/", REQUESTBODY.none(), (request, response) => {
     const name = request.body.name;
-    // console.log(name);
+    console.log(name);
 
     getPokemonData(name).then(
         (returned) => {
