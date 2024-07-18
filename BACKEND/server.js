@@ -8,7 +8,7 @@ const APP = express();
 const PORT = 5000;
 
 // ADD YOUR OWN KEY HERE
-const PERSONALKEY = "cb84764be2mshd187c5270aed11ep17bd61jsn26f586772520";
+const PERSONALKEY = "";
 
 function getPokemonData(name) {
 
