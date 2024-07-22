@@ -73,7 +73,7 @@ function getTypeLabels(type_array) {
   ret_this = ret_this.map(
     (image) => {
       return (
-        <img src={image} style={{display: "inline", margin: "2px", "box-shadow": "0px 0px 50px 1px rgba(0, 0, 0, 0.2)"}}></img>
+        <img src={image} style={{display: "inline", margin: "2px", boxShadow: "0px 0px 50px 1px rgba(0, 0, 0, 0.2)"}}></img>
       );
     }
   )
