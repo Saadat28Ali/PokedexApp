@@ -11,11 +11,12 @@ const IMAGEFRAMESTYLE=
     min-w-80 
     flex 
     justify-center
+    *:select-none
   `;
 const INPUTFRAMESTYLE=
   ` 
     min-h-80 
-    w-[339px]
+    w-[338px]
     lg:min-w-50 
     p-7 
     rounded-xl 
@@ -35,6 +36,7 @@ const INPUTFRAMESTYLE=
     lg:mt-0
     z-20
     mt-[130px]
+    *:select-none
   `
 const TEXTINPUTSTYLE=
   `
@@ -89,12 +91,12 @@ function App() {
         {/* <ImageFrame className={"ImageFrame" + IMAGEFRAMESTYLE} data={data} pokemonimagestyle={POKEMONIMAGESTYLE} somemorestyle={"h-14 bg-gradient-to-r from-sky-500 to-indigo-500 absolute "}/> */}
         
         <ImageFrame2 data={data} main_styling="flex justify-center items-center" spacer1_styling="" top_styling="z-10 absolute" spacer2_styling="h-16" frame_styling="h-[500px]" pokemon_styling="bg-white/20 min-h-[300px] min-w-[300px]" loadinganim_styling={"w-[30px] h-[30px] border-white animate-pulse font-bold text-black text-3xl ml-[45px] rounded-xl shadow-[0_0_100px_50px_rgba(118,215,196,0.5)] text-center " + ((fetching === true) ? "" : "hidden")} loading_styling="z-30 absolute" spacer3_styling="h-[85px]"/>
-        <InputFrame className={"InputFrame" + INPUTFRAMESTYLE} textinputstyle={TEXTINPUTSTYLE} buttonstyle={BUTTONSTYLE} data={data} dataSetter={setData} fetchingSetter={setFetching} fetchingStatus={fetching}/>
+        <InputFrame className={"InputFrame" + INPUTFRAMESTYLE} textinputstyle={TEXTINPUTSTYLE} buttonstyle={BUTTONSTYLE} data={data} dataSetter={setData} fetchingSetter={setFetching} fetchingStatus={fetching} pokemonFieldsStyle="font-mono bg-gradient-to-b from-emerald-900 to-emerald-950 p-2 rounded-xl border-4 border-solid border-amber-500 w-full font-normal italic text-[18px] leading-6 shadow-[0px_0px_50px_1px_rgba(0,0,0,0.5)]"/>
         <div className="Spacer flex-grow w-[100%]"></div>
       </div>
       <div className="Spacer flex-grow"></div>
 
-      {/* <div className="border-" */}
+      {/* <div className="border-8" */}
       {/* <div className="FetchingStatus"> Fetching: {fetching.toString().toUpperCase()} </div>  */}
     </div>
   );

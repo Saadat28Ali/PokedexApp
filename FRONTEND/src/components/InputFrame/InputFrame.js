@@ -1,9 +1,87 @@
 import axios from "axios";
+
+import NormalLabel from "./TypeBadges/Normal.svg";
+import FightingLabel from "./TypeBadges/Fighting.svg";
+import PsychicLabel from "./TypeBadges/Psychic.svg";
+import DarkLabel from "./TypeBadges/Dark.svg";
+import FairyLabel from "./TypeBadges/Fairy.svg";
+import DragonLabel from "./TypeBadges/Dragon.svg";
+import IceLabel from "./TypeBadges/Ice.svg";
+import FireLabel from "./TypeBadges/Fire.svg";
+import WaterLabel from "./TypeBadges/Water.svg";
+import ElectricLabel from "./TypeBadges/Electric.svg";
+import GrassLabel from "./TypeBadges/Grass.svg";
+import GroundLabel from "./TypeBadges/Ground.svg";
+import FlyingLabel from "./TypeBadges/Flying.svg";
+import RockLabel from "./TypeBadges/Rock.svg";
+import PoisonLabel from "./TypeBadges/Poison.svg";
+import GhostLabel from "./TypeBadges/Ghost.svg";
+import SteelLabel from "./TypeBadges/Steel.svg";
+import BugLabel from "./TypeBadges/Bug.svg";
+
+const Labels = {
+  Normal: NormalLabel, 
+  Fighting: FightingLabel, 
+  Flying: FlyingLabel, 
+  Electric: ElectricLabel, 
+  Ground: GroundLabel, 
+  Water: WaterLabel, 
+  Grass: GrassLabel, 
+  Bug: BugLabel, 
+  Fire: FireLabel, 
+  Dragon: DragonLabel, 
+  Ice: IceLabel, 
+  Fairy: FairyLabel, 
+  Steel: SteelLabel, 
+  Dark: DarkLabel, 
+  Ghost: GhostLabel, 
+  Poison: PoisonLabel, 
+  Psychic: PsychicLabel, 
+  Rock: RockLabel
+}
+
 const ADDR = "http://localhost:5000/api/";
+
 
 function capitalize(s) {
   // capitalizes the first letter of the string
-  return (s) ? s.charAt(0).toUpperCase() + s.substring(1) : "";
+  if (s) {
+    let split = s.split(",");
+    let ret_this = [];
+    for (let index in split) {
+      let adding_this = (split[index]).trim();
+      ret_this.push((adding_this) ? adding_this.charAt(0).toUpperCase() + adding_this.substring(1) : "");
+    }
+    // return ret_this.join(", ");
+    return ret_this;
+  }
+  else {
+    return "";
+  }
+  // alert(ret_this);
+  // for (let item in ret_this) {
+  //   alert(ret_this[item]);
+  // }
+  // return (s) ? s.charAt(0).toUpperCase() + s.substring(1) : "";
+}
+
+function getTypeLabels(type_array) {
+  let ret_this = [];
+  for (let index in type_array) {
+    ret_this.push(Labels[type_array[index]]);
+  }
+  ret_this = ret_this.map(
+    (image) => {
+      return (
+        <img src={image} style={{display: "inline", margin: "2px", "box-shadow": "0px 0px 50px 1px rgba(0, 0, 0, 0.2)"}}></img>
+      );
+    }
+  )
+  return (
+    <div style={{display: "inline"}}>
+      {ret_this}
+    </div>
+  );
 }
 
 function getPokemonData(name, setter) {
@@ -31,7 +109,7 @@ function getPokemonData(name, setter) {
     });
   }
 
-export default function InputFrame({ className, data, textinputstyle, buttonstyle, dataSetter, fetchingSetter, fetchingStatus }) {
+export default function InputFrame({ className, data, textinputstyle, buttonstyle, dataSetter, fetchingSetter, fetchingStatus, pokemonFieldsStyle }) {
 
     function updateButtonCallback(event) {
         event.preventDefault();
@@ -56,10 +134,10 @@ export default function InputFrame({ className, data, textinputstyle, buttonstyl
 
     return (
         <div className={className}>
-            <div className="Display">
-                Name: {capitalize(data.name)} <br></br>
+            <div className={"Display " + pokemonFieldsStyle}>
                 Dex No.: {data.id} <br></br>
-                Types: {capitalize(data.type)} <br></br>
+                <b>Name: {capitalize(data.name)}</b> <br></br>
+                Types: {getTypeLabels(capitalize(data.type))}
             </div>
             <div className="InputForm">
                 <form id="main" onSubmit={(event) => {updateButtonCallback(event)}}>
