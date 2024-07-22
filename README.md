@@ -1,6 +1,5 @@
 
-![pokedexss](https://github.com/user-attachments/assets/8e78298a-2965-474a-b06e-9039930cc7d4)
-
+![pokedexss](https://github.com/user-attachments/assets/465eea38-0772-4468-be21-eb2c4c2327e4)
 
 ![Static Badge](https://img.shields.io/badge/Node-JS-green?style=flat&label=Node&labelColor=grey&color=green&link=https%3A%2F%2Fgithub.com%2Fnodejs)
 ![Static Badge](https://img.shields.io/badge/React-JS-cyan)
