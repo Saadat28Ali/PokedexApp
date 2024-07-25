@@ -31,6 +31,3 @@ For both the backend and frontend scripts, both must be running simultaneously
 8. C++
 9. HTML
 10. CSS
-
-# NOTE
-Since an external API is used, the time for the app to update with new information might vary
