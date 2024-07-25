@@ -15,9 +15,6 @@ A React app that allows you to look up information about various Pokemon
 
 Search any pokemon by name and get the pokedex entry no., typing, and an image of the said pokemon
 
-## Edit server.js
-Edit ./BACKEND/server.js and add your own API key there
-
 ## Running
 For both the backend and frontend scripts, both must be running simultaneously
 > npm start
