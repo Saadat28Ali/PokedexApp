@@ -6,7 +6,8 @@
 ![Static Badge](https://img.shields.io/badge/express-JS-orange)
 ![Static Badge](https://img.shields.io/badge/axios-purple)
 ![Static Badge](https://img.shields.io/badge/tailwind-css-blue)
-https://img.shields.io/badge/C%2B%2B-darkblue
+![Static Badge](https://img.shields.io/badge/C%2B%2B-darkblue)
+
 
 
 # Pokedex
