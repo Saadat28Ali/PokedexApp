@@ -13,10 +13,6 @@ A React app that allows you to look up information about various Pokemon
 
 Search any pokemon by name and get the pokedex entry no., typing, and an image of the said pokemon
 
-# Usage
-## Public API Key
-Get a RapidAPI key for Pokemon Hub, here: https://rapidapi.com/yasindusamarasinghe10/api/pokemon-hub
-
 ## Edit server.js
 Edit ./BACKEND/server.js and add your own API key there
 
@@ -32,8 +28,9 @@ For both the backend and frontend scripts, both must be running simultaneously
 5. Express
 6. Axios
 7. JavaScript
-8. HTML
-9. CSS
+8. C++
+9. HTML
+10. CSS
 
 # NOTE
 Since an external API is used, the time for the app to update with new information might vary
