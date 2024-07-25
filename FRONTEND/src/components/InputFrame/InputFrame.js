@@ -87,7 +87,7 @@ function getTypeLabels(type_array) {
 function getPokemonData(name, setter) {
     setter(true);
     const send_this = new FormData();
-    send_this.append("name", name);
+    send_this.append("name", capitalize(name));
   
     return new Promise((resolve, reject) => {
       axios(
@@ -100,8 +100,19 @@ function getPokemonData(name, setter) {
           }
         }
       ).then((response) => {
-        // console.log(response.data.data[0]);
-        resolve(response.data.data[0]);
+        console.log(response.data);
+        
+        // fs.writeFile("./image.png", response.data.imageString, {encoding: "base64"}, (err) => {
+        //   if (err) {
+        //     console.log("error writing image data to file");
+        //     reject(err);
+        //   }
+        //   console.log("image written to file successfully");
+        //   resolve(response.data);
+        // })
+
+        resolve(response.data);
+        // resolve(response.data.data[0]);
       }).catch((error) => {
         // console.log(error.message);
         reject(error);
@@ -135,9 +146,11 @@ export default function InputFrame({ className, data, textinputstyle, buttonstyl
     return (
         <div className={className}>
             <div className={"Display " + pokemonFieldsStyle}>
-                Dex No.: {data.id} <br></br>
+                Dex No.: {data.pokedex_number} <br></br>
                 <b>Name: {capitalize(data.name)}</b> <br></br>
-                Types: {getTypeLabels(capitalize(data.type))}
+                {/* Types: {getTypeLabels(capitalize(data.type))} */}
+                {/* Types: {data.type1}, {data.type2} <br></br> */}
+                Types: {getTypeLabels([data.type1, data.type2])}
             </div>
             <div className="InputForm">
                 <form id="main" onSubmit={(event) => {updateButtonCallback(event)}}>
