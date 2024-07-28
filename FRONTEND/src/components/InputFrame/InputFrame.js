@@ -58,11 +58,6 @@ function capitalize(s) {
   else {
     return "";
   }
-  // alert(ret_this);
-  // for (let item in ret_this) {
-  //   alert(ret_this[item]);
-  // }
-  // return (s) ? s.charAt(0).toUpperCase() + s.substring(1) : "";
 }
 
 function getTypeLabels(type_array) {
@@ -70,15 +65,17 @@ function getTypeLabels(type_array) {
   for (let index in type_array) {
     ret_this.push(Labels[type_array[index]]);
   }
+  let index = 0;
   ret_this = ret_this.map(
     (image) => {
+      index += 1;
       return (
-        <img src={image} style={{display: "inline", margin: "2px", boxShadow: "0px 0px 50px 1px rgba(0, 0, 0, 0.2)"}}></img>
+        <img className="TypeLabel" key={"typelabel" + index.toString()} src={image} style={{display: "inline", margin: "2px", boxShadow: "0px 0px 50px 1px rgba(0, 0, 0, 0.2)"}}></img>
       );
     }
   )
   return (
-    <div style={{display: "inline"}}>
+    <div className="TypeLabelDiv" style={{display: "inline"}}>
       {ret_this}
     </div>
   );
@@ -142,16 +139,66 @@ export default function InputFrame({ className, data, textinputstyle, buttonstyl
         //   image: RandomImage
         // });
       }
+    
+    let pokemon_fields = (
+      <div className={"Display " + pokemonFieldsStyle}>
+        <p className={"field1"} style={{fontSize: "13px"}}>
+          No: {data.pokedex_number} | {data.japanese_name} <br></br>
+        </p>
+        <hr className="HorLine" style={{margin: "5px 0px 5px 0px"}}></hr> 
+        <b>Name: {capitalize(data.name)}</b> <br></br>
+        <p className={"field2"} style={{fontSize: "13px"}}>
+          {data.classfication} <br></br>
+        </p>
+        <hr className="HorLine" style={{margin: "5px 0px 5px 0px"}}></hr>
+        <div className={"filed3"} style={{fontSize: "13px"}}>
+          Types: {getTypeLabels([data.type1, data.type2])} <br></br>
+          Height: {data.height_m}m | Weight: {data.weight_kg}kg <br></br>
+        </div>
+      </div>);
+
+    // console.log(`Data: ${data}`);
+    if (typeof(data) === "string") {
+      if (data.includes("Unable to fetch")) {
+        pokemon_fields = (<div className={"Display " + pokemonFieldsStyle}>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+        </div>);
+      }
+    }
+    else if (typeof(data) === "object") {
+      if (data.name === "") {
+        pokemon_fields = (<div className={"Display " + pokemonFieldsStyle}>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+        </div>);
+      }
+    }
 
     return (
         <div className={className}>
-            <div className={"Display " + pokemonFieldsStyle}>
-                Dex No.: {data.pokedex_number} <br></br>
-                <b>Name: {capitalize(data.name)}</b> <br></br>
-                {/* Types: {getTypeLabels(capitalize(data.type))} */}
-                {/* Types: {data.type1}, {data.type2} <br></br> */}
-                Types: {getTypeLabels([data.type1, data.type2])}
-            </div>
+            {/* <div className={"Display " + pokemonFieldsStyle}>
+              <p style={{fontSize: "13px"}}>
+                No: {data.pokedex_number} | {data.japanese_name} <br></br>
+              </p>
+              <hr style={{margin: "5px 0px 5px 0px"}}></hr>
+              <b>Name: {capitalize(data.name)}</b> <br></br>
+              <p style={{fontSize: "13px"}}>
+                {data.classfication} <br></br>
+                <hr style={{margin: "5px 0px 5px 0px"}}></hr>
+                Types: {getTypeLabels([data.type1, data.type2])} <br></br>
+                Height: {data.height_m}m | Weight: {data.weight_kg}kg <br></br>
+              </p>
+            </div> */}
+            {pokemon_fields}
             <div className="InputForm">
                 <form id="main" onSubmit={(event) => {updateButtonCallback(event)}}>
                     <input className={"name_inp" + textinputstyle} placeholder="Enter pokemon name here..."></input> <br></br>

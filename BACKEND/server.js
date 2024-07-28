@@ -76,7 +76,7 @@ APP.post("/api/", REQUESTBODY.none(), (request, response) => {
         }
     ).catch(
         (error) => {
-            response.send("this is the home and the data fetch failed");
+            response.send("[1] Unable to fetch");
             console.log(error.message);
         }
     );

@@ -14,7 +14,7 @@ export default function ImageFrame2({ main_styling, bottom_styling, spacer1_styl
             </div>
             <div className={"BottomLayer " + bottom_styling}>
                 <div className={"Spacer1 " + spacer1_styling}></div>
-                <img src={"data:image/png;base64," + data.imageString} className={"PokemonImage " + pokemon_styling} alt="Pokemon"></img>
+                <img src={"data:image/png;base64," + data.imageString} className={"PokemonImage " + pokemon_styling} alt=""></img>
             </div>
         </div>
     );
