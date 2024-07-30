@@ -18,7 +18,7 @@ const INPUTFRAMESTYLE=
     min-h-80
     w-[338px]
     lg:min-w-50 
-    p-7 
+    p-6 
     rounded-xl 
     rounded-t-none 
     lg:rounded-r-xl

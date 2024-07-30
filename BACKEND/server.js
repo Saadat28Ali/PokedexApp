@@ -70,6 +70,7 @@ APP.post("/api/", REQUESTBODY.none(), (request, response) => {
             // response.json(returned).sendFile(returned.image_path);
             // openImage(returned.image_path);
             imageTo64(returned.image_path).then((s) => {
+                // console.log(returned);
                 returned.imageString = s;
                 response.json(returned);
             });
